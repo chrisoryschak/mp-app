@@ -123,6 +123,7 @@
     <orderEntry type="library" scope="PROVIDED" name="actionmailer (v4.2.0, RVM: ruby-2.1.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="actionpack (v4.2.0, RVM: ruby-2.1.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="actionview (v4.2.0, RVM: ruby-2.1.1) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="activeadmin (v1.0.0.pre@ed1fbc, RVM: ruby-2.1.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="activejob (v4.2.0, RVM: ruby-2.1.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="activemodel (v4.2.0, RVM: ruby-2.1.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="activerecord (v4.2.0, RVM: ruby-2.1.1) [gem]" level="application" />
