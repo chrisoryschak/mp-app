@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150221071437) do
+ActiveRecord::Schema.define(version: 20150224072759) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -55,4 +55,47 @@ ActiveRecord::Schema.define(version: 20150221071437) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "measurement_units", force: :cascade do |t|
+    t.string   "unit"
+    t.string   "unitShort"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "recipe_ingredients", force: :cascade do |t|
+    t.integer  "amount"
+    t.float    "fraction"
+    t.string   "preparation"
+    t.integer  "recipe_id"
+    t.integer  "measurement_unit_id"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+  end
+
+  add_index "recipe_ingredients", ["measurement_unit_id"], name: "index_recipe_ingredients_on_measurement_unit_id", using: :btree
+  add_index "recipe_ingredients", ["recipe_id"], name: "index_recipe_ingredients_on_recipe_id", using: :btree
+
+  create_table "recipe_steps", force: :cascade do |t|
+    t.string   "stepInstructions"
+    t.integer  "stepNumber"
+    t.integer  "recipe_id"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
+
+  add_index "recipe_steps", ["recipe_id"], name: "index_recipe_steps_on_recipe_id", using: :btree
+
+  create_table "recipes", force: :cascade do |t|
+    t.integer  "cookingTime"
+    t.integer  "defaultServings"
+    t.integer  "prepTime"
+    t.string   "recipeDescription"
+    t.string   "title"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+  end
+
+  add_foreign_key "recipe_ingredients", "measurement_units"
+  add_foreign_key "recipe_ingredients", "recipes"
+  add_foreign_key "recipe_steps", "recipes"
 end

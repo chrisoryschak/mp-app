@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  amount: 1
+  fraction: 1.5
+  preparation: MyString
+  recipe_id: 
+  measurement_unit_id: 
+
+two:
+  amount: 1
+  fraction: 1.5
+  preparation: MyString
+  recipe_id: 
+  measurement_unit_id: 

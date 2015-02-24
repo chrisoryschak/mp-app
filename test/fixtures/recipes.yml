@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  cookingTime: 1
+  defaultServings: 1
+  prepTime: 1
+  recipeDescription: MyString
+  title: MyString
+
+two:
+  cookingTime: 1
+  defaultServings: 1
+  prepTime: 1
+  recipeDescription: MyString
+  title: MyString
