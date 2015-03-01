@@ -1,10 +1,10 @@
-ActiveAdmin.register RecipeIngredient do
+ActiveAdmin.register Quantity do
 
-  belongs_to :recipe
+
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
   #
-  # permit_params :list, :of, :attributes, :on, :model
+  permit_params :primaryamount, :primaryunit, :secondaryamount, :secondaryunit, :ingredient, :recipe_id, :ingredient_id
   #
   # or
   #
@@ -13,6 +13,5 @@ ActiveAdmin.register RecipeIngredient do
   #   permitted << :other if resource.something?
   #   permitted
   # end
-
 
 end

@@ -1,10 +1,9 @@
 ActiveAdmin.register RecipeStep do
-
   belongs_to :recipe
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
   #
-  permit_params :Stepinstructions, :Stepnumber
+  permit_params :stepinstructions, :stepnumber
   #
   # or
   #
@@ -13,6 +12,4 @@ ActiveAdmin.register RecipeStep do
   #   permitted << :other if resource.something?
   #   permitted
   # end
-
-
 end
