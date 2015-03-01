@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
 
   #Recipes API
-  resources :ingredients
+  resources :ingredients, only: [:index]
   resources :recipe, only: [:index]
 
   # The priority is based upon order of creation: first created -> highest priority.

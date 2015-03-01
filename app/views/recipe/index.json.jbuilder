@@ -12,6 +12,7 @@ json.recipes @recipes do |recipe|
 
   json.ingredients recipe.quantities do |ing|
     json.ingredient ing.ingredient.name
+    json.preparation ing.preparation
     json.amount ing.primaryamount
     json.unit ing.primaryunit
     json.secondaryamount ing.secondaryamount

@@ -3,7 +3,7 @@ ActiveAdmin.register Recipe do
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
   #
-  permit_params :cookingTime, :defaultServings, :prepTime, :recipeDescription, :title, recipe_steps_attributes:[:id, :stepInstructions, :stepNumber, :_destroy], quantities_attributes:[:id,:primaryamount,:primaryunit, :secondaryamount, :secondaryunit, :ingredient, :ingredient_id]
+  permit_params :cookingTime, :defaultServings, :prepTime, :recipeDescription, :title, recipe_steps_attributes:[:id, :stepInstructions, :stepNumber, :_destroy], quantities_attributes:[:id,:preparation, :primaryamount,:primaryunit, :secondaryamount, :secondaryunit, :ingredient, :ingredient_id]
   #
   # or
   #
@@ -41,12 +41,8 @@ ActiveAdmin.register Recipe do
     end
 
     f.has_many :quantities, heading: "Ingredients", :allow_destroy => true do |ing|
-      ing.inputs :primaryamount, :primaryunit, :secondaryamount, :secondaryunit, :ingredient
+      ing.inputs :preparation, :primaryamount, :primaryunit, :secondaryamount, :secondaryunit, :ingredient
     end
-
-    # f.has_many :recipe_ingredients, heading: "Ingredients", :allow_destroy => true do |ing|
-    #   ing.inputs :preparation, :ingredient, :measurement_unit
-    # end
 
     f.actions
   end
