@@ -14,5 +14,4 @@ ActiveAdmin.register Ingredient do
   #   permitted
   # end
 
-
 end

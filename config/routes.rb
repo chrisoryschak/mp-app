@@ -3,8 +3,12 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
 
   #Recipes API
-  resources :ingredients, only: [:index]
-  resources :recipe, only: [:index]
+  namespace :api do
+    namespace :v1 do
+      resources :ingredients, only: [:index]
+      resources :recipe, only: [:index]
+    end
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
