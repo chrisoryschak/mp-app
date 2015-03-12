@@ -26,6 +26,7 @@ ActiveAdmin.register Recipe do
 
 
   form do |f|
+    f.semantic_errors
 
     f.inputs 'Details' do
       f.input :title
@@ -35,13 +36,18 @@ ActiveAdmin.register Recipe do
       f.input :defaultServings, label: 'Default Servings'
     end
 
-    f.has_many :recipe_steps, heading: "Steps", :allow_destroy => true do |step|
-      step.input :stepInstructions
-      step.input :stepNumber
+    f.has_many :recipe_steps, new_record: 'Add Step', heading: "Steps", :allow_destroy => true do |step|
+      step.input :stepNumber, label: "Step #"
+      step.input :stepInstructions, label: "Instructions"
     end
 
-    f.has_many :quantities, heading: "Ingredients", :allow_destroy => true do |ing|
-      ing.inputs :preparation, :primaryamount, :primaryunit, :secondaryamount, :secondaryunit, :ingredient
+    f.has_many :quantities, new_record: 'Add Ingredient', heading: "Ingredients", :allow_destroy => true do |ing|
+      ing.input :ingredient, label: "Ingredient"
+      ing.input :preparation, label: "Preparation"
+      ing.input :primaryamount, label: "Amount"
+      ing.input :primaryunit , label: "Measurement unit"
+      ing.input :secondaryamount, label: "Secondary amount"
+      ing.input :secondaryunit, label: "Secondary measurement unit"
     end
 
     f.actions

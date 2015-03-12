@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="Rails mp-app: development" uuid="12f069e7-d684-4d3d-9919-ac37d9c2f083">
+    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
+  </data-source>
+  <data-source name="Rails mp-app: test" uuid="013d6c5c-3a4f-4264-a416-8700c2caa975">
+    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
+  </data-source>
+  <data-source name="Rails mp-app: production" uuid="dd808631-92ff-4627-81fb-19272a15168b">
+    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
+  </data-source>
+</component>
