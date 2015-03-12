@@ -3,7 +3,7 @@ ActiveAdmin.register Recipe do
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
   #
-  permit_params :cookingTime, :defaultServings, :prepTime, :recipeDescription, :title, recipe_steps_attributes:[:id, :stepInstructions, :stepNumber, :_destroy], quantities_attributes:[:id,:preparation, :primaryamount,:primaryunit, :secondaryamount, :secondaryunit, :ingredient, :ingredient_id, :sortOrder]
+  permit_params :cookingTime, :defaultServings, :prepTime, :recipeDescription, :title, recipe_steps_attributes:[:id, :stepInstructions, :stepNumber, :_destroy], quantities_attributes:[:id,:preparation, :primaryamount,:primaryunit, :secondaryamount, :secondaryunit, :ingredient, :ingredient_id, :sortOrder, :_destroy]
   #
   # or
   #
@@ -26,7 +26,7 @@ ActiveAdmin.register Recipe do
 
 
   form do |f|
-    f.semantic_errors
+    f.semantic_errors *f.object.errors.keys
 
     f.inputs 'Details' do
       f.input :title
@@ -45,9 +45,9 @@ ActiveAdmin.register Recipe do
       ing.input :ingredient, label: "Ingredient"
       ing.input :preparation, label: "Preparation"
       ing.input :primaryamount, label: "Amount"
-      ing.input :primaryunit , label: "Measurement unit"
+      ing.input :primaryunit , label: "Measurement unit", :as => :select, :collection => ["teaspoon", "tablespoon", "cup", "pint", "quart","gallon","ounce","pound","inch"]
       ing.input :secondaryamount, label: "Secondary amount"
-      ing.input :secondaryunit, label: "Secondary measurement unit"
+      ing.input :secondaryunit, label: "Secondary measurement unit", :as => :select, :collection => ["teaspoon", "tablespoon", "cup", "pint", "quart","gallon","ounce","pound","inch"]
     end
 
     f.actions
