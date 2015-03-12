@@ -17,6 +17,7 @@ json.recipes @recipes do |recipe|
     json.unit ing.primaryunit
     json.secondaryamount ing.secondaryamount
     json.secondaryunit ing.secondaryunit
+    json.sortorder ing.sortOrder
   end
 
 end

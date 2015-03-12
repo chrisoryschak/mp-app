@@ -3,7 +3,7 @@ ActiveAdmin.register Recipe do
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
   #
-  permit_params :cookingTime, :defaultServings, :prepTime, :recipeDescription, :title, recipe_steps_attributes:[:id, :stepInstructions, :stepNumber, :_destroy], quantities_attributes:[:id,:preparation, :primaryamount,:primaryunit, :secondaryamount, :secondaryunit, :ingredient, :ingredient_id]
+  permit_params :cookingTime, :defaultServings, :prepTime, :recipeDescription, :title, recipe_steps_attributes:[:id, :stepInstructions, :stepNumber, :_destroy], quantities_attributes:[:id,:preparation, :primaryamount,:primaryunit, :secondaryamount, :secondaryunit, :ingredient, :ingredient_id, :sortOrder]
   #
   # or
   #
@@ -36,12 +36,12 @@ ActiveAdmin.register Recipe do
       f.input :defaultServings, label: 'Default Servings'
     end
 
-    f.has_many :recipe_steps, new_record: 'Add Step', heading: "Steps", :allow_destroy => true do |step|
-      step.input :stepNumber, label: "Step #"
+    f.has_many :recipe_steps, new_record: 'Add Step', heading: "Steps", sortable: :stepNumber, sortable_start: 1, :allow_destroy => true do |step|
+      # step.input :stepNumber, label: "Step #"
       step.input :stepInstructions, label: "Instructions"
     end
 
-    f.has_many :quantities, new_record: 'Add Ingredient', heading: "Ingredients", :allow_destroy => true do |ing|
+    f.has_many :quantities, new_record: 'Add Ingredient', heading: "Ingredients", sortable: :sortOrder, sortable_start: 1, :allow_destroy => true do |ing|
       ing.input :ingredient, label: "Ingredient"
       ing.input :preparation, label: "Preparation"
       ing.input :primaryamount, label: "Amount"
