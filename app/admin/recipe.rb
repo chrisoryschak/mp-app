@@ -47,10 +47,13 @@ ActiveAdmin.register Recipe do
         span strong q.primaryamount
         span q.primaryunit
         span q.ingredient.name
-        text_node "("
-        span q.preparation
-        text_node ")"
+        if q.preparation?
+          text_node "("
+          span q.preparation
+          text_node ")"
+        end
         br
+
       end
     end
 
