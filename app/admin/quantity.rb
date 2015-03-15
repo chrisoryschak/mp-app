@@ -1,4 +1,5 @@
 ActiveAdmin.register Quantity do
+  menu false
 
 
   # See permitted parameters documentation:
