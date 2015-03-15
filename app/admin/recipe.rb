@@ -14,6 +14,58 @@ ActiveAdmin.register Recipe do
   #   permitted
   # end
 
+  show do
+
+    div do
+      h2 recipe.title
+      span recipe.recipeDescription
+      br
+      br
+    end
+
+    div do
+      strong "Steps"
+      br
+      br
+
+      div do
+        recipe.recipe_steps.order(:stepNumber).each do |i|
+          span b i.stepNumber
+          span i.stepInstructions
+          br
+          br
+        end
+      end
+    end
+
+  end
+
+  sidebar "Ingredients", only: :show do
+
+    div do
+      recipe.quantities.order(:sortOrder).each do |q|
+        span strong q.primaryamount
+        span q.primaryunit
+        span q.ingredient.name
+        text_node "("
+        span q.preparation
+        text_node ")"
+        br
+      end
+    end
+
+  end
+
+  sidebar "Details", only: :show do
+
+    attributes_table_for recipe do
+      row :defaultServings
+      row :prepTime
+      row :cookingTime
+    end
+
+  end
+
   index do
     selectable_column
     id_column
