@@ -6,7 +6,6 @@ module Api
 
       def index
         @ingredients = Ingredient.all
-        # render json: @ingredients
       end
 
     end
