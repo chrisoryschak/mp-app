@@ -14,6 +14,40 @@ ActiveAdmin.register Recipe do
   #   permitted
   # end
 
+  controller do
+    before_filter :update_fraction, only: [:create, :update]
+
+    private
+
+    def update_fraction
+      puts "Running update_fraction method"
+      # problem: for each quantity in the param attribrutes, if fraction has a value, update the primary/secondary amount with the amount+fraction
+      params[:recipe][:quantities_attributes].each do |k,v|
+
+        case v['fraction']
+          when "1/16"
+            puts "found 1/16"
+            v['primaryamount'] = v['primaryamount'].to_i + 0.0625
+          when "1/8"
+            v['primaryamount'] = v['primaryamount'].to_i + 0.125
+          when "1/4"
+            v['primaryamount'] = v['primaryamount'].to_i + 0.25
+          when "1/3"
+            v['primaryamount'] = v['primaryamount'].to_i + + 0.333
+          when "1/2"
+            v['primaryamount'] = v['primaryamount'].to_i + 0.5
+          when "2/3"
+            v['primaryamount'] = v['primaryamount'].to_i + 0.666
+          when "3/4"
+            v['primaryamount'] = v['primaryamount'].to_i + 0.75
+        end
+
+      end
+      # update!
+    end
+
+  end
+
   show do
 
     div do
@@ -44,7 +78,7 @@ ActiveAdmin.register Recipe do
 
     div do
       recipe.quantities.order(:sortOrder).each do |q|
-        span strong q.primaryamount.to_i
+        span strong q.primaryamount
         span q.primaryunit
         span q.ingredient.name
         if q.preparation?
