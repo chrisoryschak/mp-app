@@ -4,7 +4,7 @@ ActiveAdmin.register Recipe do
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
   #
-  permit_params :cookingTime, :defaultServings, :prepTime, :recipeDescription, :title, recipe_steps_attributes:[:id, :stepInstructions, :stepNumber, :_destroy], quantities_attributes:[:id,:preparation, :primaryamount,:primaryunit, :secondaryamount, :secondaryunit, :ingredient, :fraction, :ingredient_id, :sortOrder, :_destroy]
+  permit_params :cookingTime, :defaultServings, :prepTime, :recipeDescription, :title, step_sections_attributes:[:id, :title, :_destroy, recipe_steps_attributes:[:id, :stepInstructions, :stepNumber, :_destroy]], quantities_attributes:[:id,:preparation, :primaryamount,:primaryunit, :secondaryamount, :secondaryunit, :ingredient, :fraction, :ingredient_id, :sortOrder, :_destroy]
   #
   # or
   #
@@ -21,19 +21,17 @@ ActiveAdmin.register Recipe do
 
     def update_fraction
       puts "Running update_fraction method"
-      # problem: for each quantity in the param attribrutes, if fraction has a value, update the primary/secondary amount with the amount+fraction
-      params[:recipe][:quantities_attributes].each do |k,v|
 
+      params[:recipe][:quantities_attributes].each do |k,v|
         case v['fraction']
           when "1/16"
-            puts "found 1/16"
             v['primaryamount'] = v['primaryamount'].to_i + 0.0625
           when "1/8"
             v['primaryamount'] = v['primaryamount'].to_i + 0.125
           when "1/4"
             v['primaryamount'] = v['primaryamount'].to_i + 0.25
           when "1/3"
-            v['primaryamount'] = v['primaryamount'].to_i + + 0.333
+            v['primaryamount'] = v['primaryamount'].to_i + 0.333
           when "1/2"
             v['primaryamount'] = v['primaryamount'].to_i + 0.5
           when "2/3"
@@ -41,9 +39,8 @@ ActiveAdmin.register Recipe do
           when "3/4"
             v['primaryamount'] = v['primaryamount'].to_i + 0.75
         end
-
       end
-      # update!
+
     end
 
   end
@@ -58,17 +55,21 @@ ActiveAdmin.register Recipe do
     end
 
     div do
-      strong "Steps"
-      br
-      br
 
       div do
-        recipe.recipe_steps.order(:stepNumber).each do |i|
-          span b i.stepNumber
-          span i.stepInstructions
+
+        recipe.step_sections.each do |section|
+
+          span b section.title
           br
-          br
+
+          section.recipe_steps.order(:stepNumber).each do |i|
+            span b i.stepNumber
+            span i.stepInstructions
+            br
+          end
         end
+
       end
     end
 
@@ -126,8 +127,13 @@ ActiveAdmin.register Recipe do
       f.input :defaultServings, :required => true, label: 'Default Servings'
     end
 
-    f.has_many :recipe_steps, new_record: 'Add Step', heading: "Steps", sortable: :stepNumber, sortable_start: 1, :allow_destroy => true do |step|
-      step.input :stepInstructions, label: "Instructions"
+    f.has_many :step_sections, new_record: "New Step Section", heading: "Recipe Step Sections", :allow_destroy => true do |section|
+      section.input :title
+
+      section.has_many :recipe_steps, new_record: 'Add Step', heading: "Steps", sortable: :stepNumber, sortable_start: 1, :allow_destroy => true do |step|
+        step.input :stepInstructions, label: "Instructions"
+      end
+
     end
 
     f.has_many :quantities, new_record: 'Add Ingredient', heading: "Ingredients", sortable: :sortOrder, sortable_start: 1, :allow_destroy => true do |ing|
