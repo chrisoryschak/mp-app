@@ -5,8 +5,8 @@ json.recipes @recipes do |recipe|
   json.cooktime recipe.cookingTime
   json.servings recipe.defaultServings
 
-  json.recipesections recipe.step_sections do |step|
-    json.sectiontitle step.title
+  json.instructions recipe.step_sections do |step|
+    json.recipesectiontitle step.title
 
     json.steps step.recipe_steps do |recipestep|
       json.stepnumber  recipestep.stepNumber
@@ -16,7 +16,7 @@ json.recipes @recipes do |recipe|
   end
 
   json.ingredients recipe.ingredient_sections do |ing|
-    json.ingsectiontitle ing.title
+    json.ingredientsectiontitle ing.title
 
     json.ingredients ing.quantities do |ingqaunt|
       json.ingredient ingqaunt.ingredient.name

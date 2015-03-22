@@ -4,7 +4,7 @@ ActiveAdmin.register Recipe do
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
   #
-  permit_params :cookingTime, :defaultServings, :prepTime, :recipeDescription, :title, step_sections_attributes:[:id, :_destroy, :title, recipe_steps_attributes:[:id, :stepInstructions, :stepNumber, :_destroy]], ingredient_sections_attributes:[:id, :_destroy,:title, quantities_attributes:[:id,:_destroy,:preparation, :primaryamount, :primaryunit, :secondaryamount, :secondaryunit, :fraction, :sortOrder, :ingredient, :ingredient_section_id, :ingredient_id]]
+  permit_params :cookingTime, :defaultServings, :prepTime, :recipeDescription,:credit, :recipe_category, :recipe_category_id, :title, step_sections_attributes:[:id, :_destroy, :title, recipe_steps_attributes:[:id, :stepInstructions, :stepNumber, :_destroy]], ingredient_sections_attributes:[:id, :_destroy,:title, quantities_attributes:[:id,:_destroy,:preparation, :primaryamount, :primaryunit, :secondaryamount, :secondaryunit, :fraction, :sortOrder, :ingredient, :ingredient_section_id, :ingredient_id]]
   #
   # or
   #
@@ -111,6 +111,8 @@ ActiveAdmin.register Recipe do
   sidebar "Details", only: :show do
 
     attributes_table_for recipe do
+      row :recipe_category
+      row :credit
       row :defaultServings
       row :prepTime
       row :cookingTime
@@ -122,9 +124,8 @@ ActiveAdmin.register Recipe do
     selectable_column
     id_column
     column :title
-    column :prepTime
-    column :cookingTime
-    column :defaultServings
+    column :recipe_category
+    column :credit
     column :created_at
     actions
   end
@@ -135,7 +136,9 @@ ActiveAdmin.register Recipe do
 
     f.inputs 'Details' do
       f.input :title, :required => true
+      f.input :recipe_category
       f.input :recipeDescription, label: 'Description', :input_html => { :class => 'autogrow', :rows => 10, :cols => 20}
+      f.input :credit
       f.input :prepTime, :required => true, label: 'Preparation Time (min)'
       f.input :cookingTime, :required => true, label: 'Cooking Time (min)'
       f.input :defaultServings, :required => true, label: 'Default Servings'

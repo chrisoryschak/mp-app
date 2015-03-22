@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150321232931) do
+ActiveRecord::Schema.define(version: 20150322223108) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -79,6 +79,12 @@ ActiveRecord::Schema.define(version: 20150321232931) do
 
   add_index "quantities", ["ingredient_id"], name: "index_quantities_on_ingredient_id", using: :btree
 
+  create_table "recipe_categories", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "title"
+  end
+
   create_table "recipe_steps", force: :cascade do |t|
     t.string   "stepInstructions"
     t.integer  "stepNumber"
@@ -93,8 +99,10 @@ ActiveRecord::Schema.define(version: 20150321232931) do
     t.integer  "prepTime"
     t.string   "recipeDescription"
     t.string   "title"
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.integer  "recipe_category_id"
+    t.string   "credit"
   end
 
   create_table "step_sections", force: :cascade do |t|
@@ -110,5 +118,6 @@ ActiveRecord::Schema.define(version: 20150321232931) do
   add_foreign_key "quantities", "ingredient_sections"
   add_foreign_key "quantities", "ingredients"
   add_foreign_key "recipe_steps", "step_sections"
+  add_foreign_key "recipes", "recipe_categories"
   add_foreign_key "step_sections", "recipes"
 end
