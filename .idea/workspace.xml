@@ -2,18 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e9a00e3c-b31a-4ce9-a661-f52f7a603106" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/db/migrate/20150321232620_create_ingredient_sections.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/db/migrate/20150321232931_update_quantities_references.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/admin/ingredient_section.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/models/ingredient_section.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/models/ingredient_section_test.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/fixtures/ingredient_sections.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/admin/quantity.rb" afterPath="$PROJECT_DIR$/app/admin/quantity.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/quantity.rb" afterPath="$PROJECT_DIR$/app/models/quantity.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/admin/recipe.rb" afterPath="$PROJECT_DIR$/app/admin/recipe.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/recipe.rb" afterPath="$PROJECT_DIR$/app/models/recipe.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/schema.rb" afterPath="$PROJECT_DIR$/db/schema.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="mp-app.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -45,8 +34,8 @@
       <file leaf-file-name="recipe.rb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/admin/recipe.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5870842" vertical-offset="960" max-vertical-offset="2520">
-              <caret line="84" column="10" selection-start-line="84" selection-start-column="10" selection-end-line="84" selection-end-column="10" />
+            <state vertical-scroll-proportion="0.8806262" vertical-offset="0" max-vertical-offset="2550">
+              <caret line="30" column="72" selection-start-line="30" selection-start-column="72" selection-end-line="30" selection-end-column="72" />
               <folding />
             </state>
           </provider>
@@ -515,10 +504,10 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1436" height="877" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.33538842" sideWeight="0.79053086" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.33538842" sideWeight="0.79053086" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32875" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -941,8 +930,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/admin/recipe.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5870842" vertical-offset="960" max-vertical-offset="2520">
-          <caret line="84" column="10" selection-start-line="84" selection-start-column="10" selection-end-line="84" selection-end-column="10" />
+        <state vertical-scroll-proportion="0.8806262" vertical-offset="0" max-vertical-offset="2550">
+          <caret line="30" column="72" selection-start-line="30" selection-start-column="72" selection-end-line="30" selection-end-column="72" />
           <folding />
         </state>
       </provider>

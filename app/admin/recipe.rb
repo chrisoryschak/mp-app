@@ -4,7 +4,7 @@ ActiveAdmin.register Recipe do
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
   #
-  permit_params :cookingTime, :defaultServings, :prepTime, :recipeDescription, :title, step_sections_attributes:[:id, :_destroy, :title, recipe_steps_attributes:[:id, :stepInstructions, :stepNumber, :_destroy]], ingredient_sections_attributes:[:id, :_destroy,:title, quantities_attributes:[:id,:_destroy,:preparation, :primaryamount, :primaryunit, :secondaryamount, :secondaryunit, :fraction, :ingredient, :ingredient_section_id, :ingredient_id]]
+  permit_params :cookingTime, :defaultServings, :prepTime, :recipeDescription, :title, step_sections_attributes:[:id, :_destroy, :title, recipe_steps_attributes:[:id, :stepInstructions, :stepNumber, :_destroy]], ingredient_sections_attributes:[:id, :_destroy,:title, quantities_attributes:[:id,:_destroy,:preparation, :primaryamount, :primaryunit, :secondaryamount, :secondaryunit, :fraction, :sortOrder, :ingredient, :ingredient_section_id, :ingredient_id]]
   #
   # or
   #
@@ -22,24 +22,26 @@ ActiveAdmin.register Recipe do
     def update_fraction
       puts "Running update_fraction method"
 
-      # params[:recipe][:quantities_attributes].each do |k,v|
-      #   case v['fraction']
-      #     when "1/16"
-      #       v['primaryamount'] = v['primaryamount'].to_i + 0.0625
-      #     when "1/8"
-      #       v['primaryamount'] = v['primaryamount'].to_i + 0.125
-      #     when "1/4"
-      #       v['primaryamount'] = v['primaryamount'].to_i + 0.25
-      #     when "1/3"
-      #       v['primaryamount'] = v['primaryamount'].to_i + 0.333
-      #     when "1/2"
-      #       v['primaryamount'] = v['primaryamount'].to_i + 0.5
-      #     when "2/3"
-      #       v['primaryamount'] = v['primaryamount'].to_i + 0.666
-      #     when "3/4"
-      #       v['primaryamount'] = v['primaryamount'].to_i + 0.75
-      #   end
-      # end
+      params[:recipe][:ingredient_sections_attributes].each do |k,v|
+          v[:quantities_attributes].each do |key, val|
+             case val['fraction']
+              when "1/16"
+                val['primaryamount'] = val['primaryamount'].to_i + 0.0625
+              when "1/8"
+                val['primaryamount'] = val['primaryamount'].to_i + 0.125
+              when "1/4"
+                val['primaryamount'] = val['primaryamount'].to_i + 0.25
+              when "1/3"
+                val['primaryamount'] = val['primaryamount'].to_i + 0.333
+              when "1/2"
+                val['primaryamount'] = val['primaryamount'].to_i + 0.5
+              when "2/3"
+                val['primaryamount'] = val['primaryamount'].to_i + 0.666
+              when "3/4"
+                val['primaryamount'] = val['primaryamount'].to_i + 0.75
+             end
+        end
+      end
 
     end
 
