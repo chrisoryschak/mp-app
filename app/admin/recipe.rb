@@ -87,13 +87,11 @@ ActiveAdmin.register Recipe do
         h4 ingsection.title
 
         ingsection.quantities.order(:sortOrder).each do |q|
-          span strong q.primaryamount
-          span q.primaryunit
+          span strong pluralize(number_to_human(q.primaryamount, precision:2), q.primaryunit)
 
           if q.secondaryamount?
             text_node "&"
-            span q.secondaryamount
-            span q.secondaryunit
+            span pluralize(number_to_human(q.secondaryamount, precision:1), q.secondaryunit)
           end
 
           span q.ingredient.name
