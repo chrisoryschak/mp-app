@@ -124,9 +124,10 @@ ActiveAdmin.register Recipe do
     selectable_column
     id_column
     column :title
-    column :recipe_category
+    column 'Category', :recipe_category
     column :credit
     column :created_at
+    column :updated_at
     actions
   end
 
