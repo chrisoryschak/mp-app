@@ -1,6 +1,8 @@
 json.recipes @recipes do |recipe|
   json.title recipe.title
+  json.category recipe.recipe_category.title
   json.description recipe.recipeDescription
+  json.credit recipe.credit
   json.preptime recipe.prepTime
   json.cooktime recipe.cookingTime
   json.servings recipe.defaultServings
