@@ -89,7 +89,15 @@ ActiveAdmin.register Recipe do
         ingsection.quantities.order(:sortOrder).each do |q|
           span strong q.primaryamount
           span q.primaryunit
+
+          if q.secondaryamount?
+            text_node "&"
+            span q.secondaryamount
+            span q.secondaryunit
+          end
+
           span q.ingredient.name
+
           if q.preparation?
             text_node "("
             span q.preparation
