@@ -9,7 +9,7 @@ json.recipes @recipes do |recipe|
     json.sectiontitle step.title
 
     json.steps step.recipe_steps do |recipestep|
-      json.step  recipestep.stepNumber
+      json.stepnumber  recipestep.stepNumber
       json.instructions recipestep.stepInstructions
     end
 
