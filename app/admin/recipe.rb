@@ -22,9 +22,11 @@ ActiveAdmin.register Recipe do
     def update_fraction
       puts "Running update_fraction method"
 
-      params[:recipe][:ingredient_sections_attributes].each do |k,v|
+      if params[:recipe][:ingredient_sections_attributes].present?
+
+        params[:recipe][:ingredient_sections_attributes].each do |k,v|
           v[:quantities_attributes].each do |key, val|
-             case val['fraction']
+            case val['fraction']
               when "1/16"
                 val['primaryamount'] = val['primaryamount'].to_i + 0.0625
               when "1/8"
@@ -39,8 +41,10 @@ ActiveAdmin.register Recipe do
                 val['primaryamount'] = val['primaryamount'].to_i + 0.666
               when "3/4"
                 val['primaryamount'] = val['primaryamount'].to_i + 0.75
-             end
+            end
+          end
         end
+
       end
 
     end
@@ -87,7 +91,7 @@ ActiveAdmin.register Recipe do
         h4 ingsection.title
 
         ingsection.quantities.order(:sortOrder).each do |q|
-          span strong pluralize(number_to_human(q.primaryamount, precision:2), q.primaryunit)
+          span strong pluralize(number_to_human(q.primaryamount, precision:3), q.primaryunit)
 
           if q.secondaryamount?
             text_node "&"

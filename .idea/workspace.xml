@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="e9a00e3c-b31a-4ce9-a661-f52f7a603106" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/admin/recipe.rb" afterPath="$PROJECT_DIR$/app/admin/recipe.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/admin/recipe_category.rb" afterPath="$PROJECT_DIR$/app/admin/recipe_category.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="mp-app.iws" />
@@ -33,20 +32,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="recipe.rb" pinned="false" current-in-tab="false">
+      <file leaf-file-name="recipe.rb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/admin/recipe.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1815" max-vertical-offset="2700">
-              <caret line="126" column="23" selection-start-line="126" selection-start-column="23" selection-end-line="126" selection-end-column="23" />
+            <state vertical-scroll-proportion="0.49902153" vertical-offset="1140" max-vertical-offset="2760">
+              <caret line="93" column="76" selection-start-line="93" selection-start-column="76" selection-end-line="93" selection-end-column="76" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="recipe_category.rb" pinned="false" current-in-tab="true">
+      <file leaf-file-name="recipe_category.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/admin/recipe_category.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.41095892" vertical-offset="0" max-vertical-offset="705">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="705">
               <caret line="14" column="5" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
               <folding />
             </state>
@@ -130,8 +129,8 @@
         <option value="$PROJECT_DIR$/db/migrate/20150322223108_add_credit_to_recipe.rb" />
         <option value="$PROJECT_DIR$/app/admin/ingredient.rb" />
         <option value="$PROJECT_DIR$/app/views/api/v1/recipe/index.json.jbuilder" />
-        <option value="$PROJECT_DIR$/app/admin/recipe.rb" />
         <option value="$PROJECT_DIR$/app/admin/recipe_category.rb" />
+        <option value="$PROJECT_DIR$/app/admin/recipe.rb" />
       </list>
     </option>
   </component>
@@ -974,18 +973,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/admin/recipe.rb">
+    <entry file="file://$PROJECT_DIR$/app/admin/recipe_category.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1815" max-vertical-offset="2700">
-          <caret line="126" column="23" selection-start-line="126" selection-start-column="23" selection-end-line="126" selection-end-column="23" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="705">
+          <caret line="14" column="5" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/admin/recipe_category.rb">
+    <entry file="file://$PROJECT_DIR$/app/admin/recipe.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.41095892" vertical-offset="0" max-vertical-offset="705">
-          <caret line="14" column="5" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
+        <state vertical-scroll-proportion="0.49902153" vertical-offset="1140" max-vertical-offset="2760">
+          <caret line="93" column="76" selection-start-line="93" selection-start-column="76" selection-end-line="93" selection-end-column="76" />
           <folding />
         </state>
       </provider>
