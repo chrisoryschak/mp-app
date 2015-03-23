@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e9a00e3c-b31a-4ce9-a661-f52f7a603106" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/admin/recipe.rb" afterPath="$PROJECT_DIR$/app/admin/recipe.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/ingredient.rb" afterPath="$PROJECT_DIR$/app/models/ingredient.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/recipe_category.rb" afterPath="$PROJECT_DIR$/app/models/recipe_category.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="mp-app.iws" />
@@ -32,11 +33,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="recipe.rb" pinned="false" current-in-tab="true">
+      <file leaf-file-name="recipe.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/admin/recipe.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.49902153" vertical-offset="1140" max-vertical-offset="2760">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2760">
               <caret line="93" column="76" selection-start-line="93" selection-start-column="76" selection-end-line="93" selection-end-column="76" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="recipe.rb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/recipe.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="270">
+              <caret line="9" column="44" selection-start-line="9" selection-start-column="44" selection-end-line="9" selection-end-column="44" />
               <folding />
             </state>
           </provider>
@@ -47,6 +58,36 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="705">
               <caret line="14" column="5" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="quantity.rb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/quantity.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="195">
+              <caret line="7" column="3" selection-start-line="7" selection-start-column="3" selection-end-line="7" selection-end-column="3" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ingredient.rb" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/models/ingredient.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.14677104" vertical-offset="0" max-vertical-offset="511">
+              <caret line="5" column="3" selection-start-line="1" selection-start-column="0" selection-end-line="5" selection-end-column="3" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="recipe_category.rb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/recipe_category.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="135">
+              <caret line="2" column="3" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
               <folding />
             </state>
           </provider>
@@ -119,18 +160,18 @@
         <option value="$PROJECT_DIR$/db/schema.rb" />
         <option value="$PROJECT_DIR$/app/admin/ingredient_section.rb" />
         <option value="$PROJECT_DIR$/app/admin/quantity.rb" />
-        <option value="$PROJECT_DIR$/app/models/ingredient.rb" />
         <option value="$PROJECT_DIR$/app/models/quantity.rb" />
         <option value="$PROJECT_DIR$/config/initializers/active_admin.rb" />
         <option value="$PROJECT_DIR$/db/migrate/20150322220033_add_title_to_recipe_category.rb" />
-        <option value="$PROJECT_DIR$/app/models/recipe.rb" />
         <option value="$PROJECT_DIR$/db/migrate/20150322221252_add_recipe_category_to_recipe.rb" />
-        <option value="$PROJECT_DIR$/app/models/recipe_category.rb" />
         <option value="$PROJECT_DIR$/db/migrate/20150322223108_add_credit_to_recipe.rb" />
         <option value="$PROJECT_DIR$/app/admin/ingredient.rb" />
         <option value="$PROJECT_DIR$/app/views/api/v1/recipe/index.json.jbuilder" />
         <option value="$PROJECT_DIR$/app/admin/recipe_category.rb" />
         <option value="$PROJECT_DIR$/app/admin/recipe.rb" />
+        <option value="$PROJECT_DIR$/app/models/recipe.rb" />
+        <option value="$PROJECT_DIR$/app/models/recipe_category.rb" />
+        <option value="$PROJECT_DIR$/app/models/ingredient.rb" />
       </list>
     </option>
   </component>
@@ -252,6 +293,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="v1" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mp-app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mp-app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="models" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -821,14 +880,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/quantity.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.20547946" vertical-offset="0" max-vertical-offset="511">
-          <caret line="7" column="3" selection-start-line="7" selection-start-column="3" selection-end-line="7" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/initializers/assets.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="511">
@@ -854,14 +905,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/ingredient_section.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.14677104" vertical-offset="0" max-vertical-offset="511">
-          <caret line="5" column="3" selection-start-line="5" selection-start-column="3" selection-end-line="5" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/ingredient.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.14677104" vertical-offset="0" max-vertical-offset="511">
           <caret line="5" column="3" selection-start-line="5" selection-start-column="3" selection-end-line="5" selection-end-column="3" />
@@ -933,22 +976,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/recipe_category.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.08806262" vertical-offset="0" max-vertical-offset="511">
-          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/recipe.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.20547946" vertical-offset="0" max-vertical-offset="511">
-          <caret line="7" column="57" selection-start-line="7" selection-start-column="57" selection-end-line="7" selection-end-column="57" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/admin/admin_user.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3522505" vertical-offset="0" max-vertical-offset="511">
@@ -973,6 +1000,22 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/quantity.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="195">
+          <caret line="7" column="3" selection-start-line="7" selection-start-column="3" selection-end-line="7" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/admin/recipe.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1140" max-vertical-offset="2760">
+          <caret line="93" column="76" selection-start-line="93" selection-start-column="76" selection-end-line="93" selection-end-column="76" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/admin/recipe_category.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="705">
@@ -981,10 +1024,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/admin/recipe.rb">
+    <entry file="file://$PROJECT_DIR$/app/models/recipe.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.49902153" vertical-offset="1140" max-vertical-offset="2760">
-          <caret line="93" column="76" selection-start-line="93" selection-start-column="76" selection-end-line="93" selection-end-column="76" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="270">
+          <caret line="9" column="44" selection-start-line="9" selection-start-column="44" selection-end-line="9" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/recipe_category.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="135">
+          <caret line="2" column="3" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/ingredient.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.14677104" vertical-offset="0" max-vertical-offset="511">
+          <caret line="5" column="3" selection-start-line="1" selection-start-column="0" selection-end-line="5" selection-end-column="3" />
           <folding />
         </state>
       </provider>
